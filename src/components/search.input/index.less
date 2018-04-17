@@ -1,0 +1,32 @@
+.search_content{
+    position: relative;
+    margin:0 0 20px 0;
+    width: 20%;
+    :global{
+        .ant-input-lg{
+            height: 28px;
+        }
+        .ant-input{
+            border-radius: 0;
+            background: none;
+            border: 1px solid #023960;
+            color:#10507d;
+        }
+    }
+    .i_search{
+        position: absolute;
+        right: 7px;
+        cursor: pointer;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 2;
+        line-height: 0;
+        color: #10507d;
+        &:hover{
+            color: #66c3f9;
+        }
+    }
+
+}

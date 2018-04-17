@@ -1,0 +1,149 @@
+{
+    "cs": {
+        "tabletitle": {
+            "titlefq": "父亲",
+            "titlemq": "母亲",
+            "titlecsrq": "出生日期",
+            "titlejhr": "监护人",
+            "titlejhrdh": "监护人电话"
+        },
+        "tabledata": [
+            {
+                "fqxm": "王三",
+                "mqxm": "张美丽",
+                "csrq": "1994-08-03",
+                "jhr": "王三",
+                "jhrdh": "13785648791"
+            }
+        ]
+    },
+    "edsfz":{
+        "tabletitle": {
+          "titlefq": "身份证号码",
+          "titlemq": "登记日期",
+          "titlecsrq": "有效日期",
+          "titlejhr": "证件状态"
+        },
+        "tabledata": [
+          {
+            "fqxm": "342903199256874912",
+            "mqxm": "2008-05-14",
+            "csrq": "2018-05-13",
+            "jhr": "正在补办"
+          }
+        ]
+    },
+    "hxx": {
+        "tabletitle": {
+            "titlefq": "户名",
+            "titlemq": "创建人",
+            "titlecsrq": "创建时间",
+            "titlejhr": "地址编号",
+            "titlejhrdh": "立户时间"
+        },
+        "tabledata": [
+            {
+                "fqxm": "王三",
+                "mqxm": "张三",
+                "csrq": "1983-08-03",
+                "jhr": "贵州省修文县",
+                "jhrdh": "1983-08-03"
+            }
+        ]
+    },
+  "jds":{
+      "tabletitle": {
+        "titlefq": "吸毒方式",
+        "titlemq": "戒毒室号",
+        "titlecsrq": "毒品来源",
+        "titlejhr": "入所类别",
+        "titlejhrdh": "戒毒次数"
+      },
+      "tabledata": [
+        {
+          "fqxm": "鼻子吸",
+          "mqxm": "118号",
+          "csrq": "买入",
+          "jhr": "中级",
+          "jhrdh": "1"
+        }
+      ]
+  },
+  "jls":{
+      "tabletitle":{
+          "titlefq":"拘留所名称",
+          "titlemq":"身份号码",
+          "titlecsrq":"开始时间",
+          "titlejhr":"结束时间"
+      },
+      "tabledata":[
+        {
+            "fqxm":"滨江区拘留所",
+            "mqxm":"342903199256874912",
+            "csrq":"2014-11-12",
+            "jhr":"2014-11-14"
+        }
+      ]
+  },
+  "kss":{
+      "tabletitle":{
+
+          "titlemq":"入所原因",
+          "titlecsrq":"刑期",
+          "titlejhr":"办案单位",
+          "titlejhrdh":"入所日期"
+      },
+      "tabledata":[
+          {
+
+              "mqxm":"刑事拘留",
+              "csrq":"二年零个月零日",
+              "jhr":"贵阳市小河区法院",
+              "jhrdh":"2007-01-16 00:00"
+          },
+          {
+
+              "mqxm":"刑事拘留",
+              "csrq":"三年四个月零日",
+              "jhr":"贵阳市南明区法院",
+              "jhrdh":"2011-11-06 13:10"
+          }
+      ]
+  },
+  "sd":{
+      "tabletitle":{
+          "titlefq":"毒品种类",
+          "titlemq":"嫌疑人类型",
+          "titlecsrq":"填报单位",
+          "titlejhr":"登记日期",
+          "titlejhrdh":"审核人"
+      },
+      "tabledata":[
+          {
+            "fqxm":"冰毒",
+            "mqxm":"无",
+            "csrq":"滨江公安局",
+            "jhr":"2014-11-15",
+            "jhrdh":"周成功"
+          }
+      ]
+  },
+  "syfw":{
+      "tabletitle":{
+          "titlefq":"房屋编号",
+          "titlemq":"是否出租房",
+          "titlecsrq":"详细地址",
+          "titlejhr":"房屋类别",
+          "titlejhrdh":"是否有住户"
+      },
+      "tabledata":[
+          {
+              "fqxm":"FW125425658",
+              "mqxm":"否",
+              "csrq":"滨江区浙新小区",
+              "jhr":"暂无数据",
+              "jhrdh":"有"
+          }
+      ]
+  }
+}

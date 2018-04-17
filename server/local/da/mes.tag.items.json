@@ -1,0 +1,21 @@
+{
+    "cs" : {"title" : "出生", "total" : 1,"name":"CS"},
+    "qr" : {"title" : "迁入", "total" : 0,"name":"QR"},
+    "qy" : {"title" : "迁移", "total" : 0,"name":"QY"},
+    "sw" : {"title" : "死亡", "total" : 0,"name":"SW"},
+    "zq" : {"title" : "准迁", "total" : 0,"name":"ZQ"},
+    "hxx" : {"title" : "户信息", "total" : 1,"name":"HXX"},
+    "hbd" : {"title" : "户变动", "total" : 0,"name":"HBD"},
+    "edsfz" : {"title" : "二代身份证", "total" : 1,"name":"EDSFZ"},
+    "sb" :{"title" : "社保", "total" : 0,"name":"SB"},
+    "jtcy" : {"title" : "家庭成员", "total" : 0,"name":"JTCY"},
+    "dnazw": {"title" : "DNA指纹", "total" : 0,"name":"DNAZW"},
+    "jds": {"title" : "戒毒所", "total" : 1,"name":"JDS"},
+    "jls" : {"title" : "拘留所", "total" : 1,"name":"JLS"},
+    "kss" : {"title" : "看守所", "total" : 2,"name":"KSS"},
+    "pcs" : {"title" : "派出所", "total" : 0,"name":"PCS"},
+    "xd": {"title" : "吸毒", "total" : 0,"name":"XD"},
+    "sd" : {"title" : "涉毒", "total" : 1,"name":"SD"},
+    "syfw":{"title" : "实有房屋", "total" : 1,"name":"SYFW"},
+    "czr" : {"title" : "承租人", "total" : 0,"name":"CZR"}
+}

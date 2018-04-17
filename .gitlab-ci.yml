@@ -1,0 +1,109 @@
+before_script:
+  - echo "run before script"
+  - whoami
+  - pwd
+  - echo "$CI_BUILD_REF_SLUG,$CI_JOB_ID,$CI_PIPELINE_ID"
+  - echo $PATH
+
+stages:
+  - build
+  - review
+  - staging
+  - production
+
+build:
+  stage: build
+  tags:
+    - r7
+  script:
+    - echo "=== build running ==="
+    - ln -s ~/libs/node_modules ./
+    - npm run build
+    - rm -rf ./dist && mkdir dist
+    - cp -R ./server ./dist && cp -R ./client ./dist && cp ./cmd.sh ./dist
+  artifacts:
+    paths:
+      - dist
+    expire_in: 1 hour
+
+review:
+  stage: review
+  tags:
+    - r7
+  variables:
+    REVIEW_PORT: $MYPORT
+  script:
+    - echo "=== review running  ==="
+    - rm -rf ~/runs/$CI_BUILD_REF_SLUG
+    - rsync -av --exclude "run.pid" --delete ./dist ~/runs/$CI_BUILD_REF_SLUG
+    - cd ~/runs/$CI_BUILD_REF_SLUG/dist
+    - ln -s ~/libs/node_modules ./
+    - chmod +x ./cmd.sh
+    - let MYPORT=`./cmd.sh change $CI_BUILD_REF_SLUG`
+    - ./cmd.sh stop
+    - ./cmd.sh start $MYPORT
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    url: http://$CI_BUILD_REF_SLUG.$REVIEW_SERVER_DOMAIN:8001
+    on_stop: stop_review
+  only:
+    - branches
+  except:
+    - master
+    - tags
+
+stop_review:
+  stage: review
+  tags:
+    - r7
+  script:
+    - echo "=== stop_review running ==="
+    - cd ~/runs/$CI_BUILD_REF_SLUG/dist
+    - chmod +x cmd.sh
+    - ./cmd.sh stop
+    - rm -rf ~/runs/$CI_BUILD_REF_SLUG
+  variables:
+    GIT_STRATEGY: none
+  when: manual
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    action: stop
+
+staging:
+  stage: staging
+  tags:
+    - r7
+  script:
+    - echo "=== staging running ==="
+    - rm -rf ~/runs/staging
+    - rsync -av --exclude "run.pid" --delete dist ~/runs/staging
+    - cd ~/runs/staging/dist
+    - ln -s ~/libs/node_modules ./
+    - chmod +x cmd.sh
+    - ./cmd.sh stop
+    - ./cmd.sh start
+  environment:
+    name: staging
+    url: http://$REVIEW_SERVER_DOMAIN:8999
+  only:
+    - master
+
+production:
+  stage: production
+  tags:
+    - r7
+  script:
+    - echo "=== production running ==="
+    - PKGNAME="$CI_PROJECT_NAME.$CI_COMMIT_TAG.tar.gz"
+    - PRODUCT_ENV=$PRODUCT_SERVER_USER@$PRODUCT_SERVER_ADD:$PRODUCT_SERVER_ROOT_PATH
+    - tar -czf $PKGNAME ./dist
+    - scp $PKGNAME $PRODUCT_ENV/qingbao/shark/
+    - echo 'scp success.'
+    - rm -rf $PKGNAME
+    - unset PKGNAME
+    - unset PRODUCT_ENV
+  environment:
+    name: production
+    url: http://$PRODUCT_SERVER_DOMAIN/qingbao/shark
+  only:
+    - tags

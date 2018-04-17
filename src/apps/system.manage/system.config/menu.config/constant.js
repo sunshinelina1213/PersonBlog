@@ -1,0 +1,3 @@
+export const MENUCONFIG = 'MENUCONFIG';
+export const GET_MENU_CONFIG = 'GET_MENU_CONFIG';
+export const CHANGE_MENU_CONFIG = 'CHANGE_MENU_CONFIG';

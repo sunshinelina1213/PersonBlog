@@ -1,0 +1,19 @@
+
+{
+    "hk":{
+      "type":"hk", "title":"户口信息", "total":"4",
+      "items" : ["cs","QR","QY","SW","zq","hxx","hbd","EDSFZ","sb","jtcy","DNAZW"]
+    },
+    "ss":{
+        "type":"ss", "title":"四所信息", "total":"2",
+        "items" : ["JDS","JLS","KSS","PCS"]
+    },
+    "dp":{
+        "type":"dp", "title":"毒品信息", "total":"2",
+        "items" : ["XD","SD"]
+    },
+    "fw":{
+        "type":"fw", "title":"房屋信息", "total":"1",
+        "items" : ["SYFW","CZR"]
+    }
+}

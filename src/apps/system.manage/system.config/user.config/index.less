@@ -1,0 +1,31 @@
+@border:1px solid #cecece;
+@hover-color:#108ee9;
+.user-config{
+    width: 80%;
+    margin: 0 auto;
+
+}
+.config-title{
+    height: 60px;
+    margin: 10px 0;
+    line-height: 60px;
+    font-size: 16px;
+    border-bottom: @border;
+    
+    span{
+        font-weight: 600;
+    }
+    :global{
+        .anticon{
+            float: right;
+            line-height: 60px;
+            &:hover{
+                color: @hover-color;
+                cursor: pointer;
+            }
+            &:active{
+                color: @hover-color;
+            }
+        }
+    }
+}

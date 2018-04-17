@@ -1,0 +1,30 @@
+:global {
+  html,
+  body {
+    background-color: #fff;
+    font-size: 14px;
+    overflow: inherit
+  }
+
+  .fr {
+    float: right;
+  }
+  .fl {
+    float: left;
+  }
+  .clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0
+  }
+  .clearfloat {
+    zoom: 1;
+    overflow: hidden;
+  }
+  .cursorP {
+    cursor: pointer;
+  }
+}
+

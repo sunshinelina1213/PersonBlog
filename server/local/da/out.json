@@ -1,0 +1,177 @@
+{
+    "success": true,
+    "message": "",
+    "mesData": {
+        "baseinfo": {
+            "id": "1",
+            "img": "../../../../static/img/wangyefei.jpg",
+            "name": "王业飞",
+            "oldname": "",
+            "police": "修文县公安局久长派出所",
+            "idcard": "52012319910928301X",
+            "gender": "男",
+            "marrage": "未婚",
+            "minzu": "汉",
+            "birthdate": "1992-09-28",
+            "tel": "15086011943",
+            "native": "中国",
+            "height": "172",
+            "peiouname": "",
+            "birthplace": "中国",
+            "city": "贵州省修文县",
+            "fathername": "",
+            "birthplacedetail": "贵州省修文县",
+            "hujiplace": "贵州省修文县清水村三组",
+            "mothername": "",
+            "policeId": "",
+            "peiouIdcard": "",
+            "fatherIdcard": "",
+            "huzhuname": "",
+            "huzhucontact": ""
+        },
+        "tags": {
+            "hk": {
+                "type": "hk",
+                "title": "户口信息",
+                "total": "4",
+                "items": {
+                    "cs": {
+                        "title": "出生",
+                        "total": 1,
+                        "name": "CS",
+                        "detail": {}
+                    },
+                    "qr": {
+                        "title": "迁入",
+                        "total": 0,
+                        "name": "QR",
+                        "detail": {}
+                    },
+                    "qy": {
+                        "title": "迁移",
+                        "total": 0,
+                        "name": "QY",
+                        "detail": {}
+                    },
+                    "sw": {
+                        "title": "死亡",
+                        "total": 0,
+                        "name": "SW",
+                        "detail": {}
+                    },
+                    "zq": {
+                        "title": "准迁",
+                        "total": 0,
+                        "name": "ZQ",
+                        "detail": {}
+                    },
+                    "hxx": {
+                        "title": "户信息",
+                        "total": 1,
+                        "name": "HXX",
+                        "detail": {}
+                    },
+                    "hbd": {
+                        "title": "户变动",
+                        "total": 0,
+                        "name": "HBD",
+                        "detail": {}
+                    },
+                    "edsfz": {
+                        "title": "二代身份证",
+                        "total": 1,
+                        "name": "EDSFZ",
+                        "detail": {}
+                    },
+                    "sb": {
+                        "title": "社保",
+                        "total": 0,
+                        "name": "SB",
+                        "detail": {}
+                    },
+                    "jtcy": {
+                        "title": "家庭成员",
+                        "total": 0,
+                        "name": "JTCY",
+                        "detail": {}
+                    },
+                    "dnazw": {
+                        "title": "DNA指纹",
+                        "total": 0,
+                        "name": "DNAZW",
+                        "detail": {}
+                    }
+                }
+            },
+            "ss": {
+                "type": "ss",
+                "title": "四所信息",
+                "total": "2",
+                "items": {
+                    "jds": {
+                        "title": "戒毒所",
+                        "total": 1,
+                        "name": "JDS",
+                        "detail": {}
+                    },
+                    "jls": {
+                        "title": "拘留所",
+                        "total": 1,
+                        "name": "JLS",
+                        "detail": {}
+                    },
+                    "kss": {
+                        "title": "看守所",
+                        "total": 2,
+                        "name": "KSS",
+                        "detail": {}
+                    },
+                    "pcs": {
+                        "title": "派出所",
+                        "total": 0,
+                        "name": "PCS",
+                        "detail": {}
+                    }
+                }
+            },
+            "dp": {
+                "type": "dp",
+                "title": "毒品信息",
+                "total": "2",
+                "items": {
+                    "xd": {
+                        "title": "吸毒",
+                        "total": 0,
+                        "name": "XD",
+                        "detail": {}
+                    },
+                    "sd": {
+                        "title": "涉毒",
+                        "total": 2,
+                        "name": "SD",
+                        "detail": {}
+                    }
+                }
+            },
+            "fw": {
+                "type": "fw",
+                "title": "房屋信息",
+                "total": "1",
+                "items": {
+                    "syfw": {
+                        "title": "实有房屋",
+                        "total": 1,
+                        "name": "SYFW",
+                        "detail": {}
+                    },
+                    "czr": {
+                        "title": "承租人",
+                        "total": 0,
+                        "name": "CZR",
+                        "detail": {}
+                    }
+                }
+            }
+        }
+    }
+}

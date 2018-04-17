@@ -1,0 +1,44 @@
+:global {
+	.self-user {
+		margin: -3px 0px 0 0px;
+		.ant-menu {
+			outline: none;
+			margin-bottom: 0;
+			padding-left: 0;
+			list-style: none;
+			z-index: 1050;
+			box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+			color: #666;
+			background: #062d55;
+			line-height: 46px;
+		}
+		.ant-menu-item >a {
+            color: #66ccff;
+        }
+        .ant-menu-vertical > .ant-menu-item, .ant-menu-inline > .ant-menu-item, .ant-menu-item-group-list > .ant-menu-item, .ant-menu-vertical > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title, .ant-menu-item-group-list > .ant-menu-submenu > .ant-menu-submenu-title {
+		    padding: 0px 28px 0 28px;
+		    font-size: 12px;
+		    line-height: 42px;
+		    height: 42px;
+		}
+		.ant-menu-inline, .ant-menu-vertical {
+            border-right: none;
+        }
+       
+        .ant-menu-item:hover, .ant-menu-item-active, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
+	    	background: none;
+		}
+		.ant-menu-item >a:hover{
+            color: #99ccff;
+        }
+        .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-item {
+		    border-right: none;
+		    margin-left: -1px;
+		    left: 1px;
+		    position: relative;
+		    z-index: 1;
+		}
+
+	}
+	
+}

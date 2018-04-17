@@ -1,0 +1,19 @@
+{
+  "baseinfo": {},
+  "tags": {
+    "hk": {
+      "type": "hk",
+      "title": "户口信息",
+      "total": "4",
+      "items": {
+        "cs": {
+          "title": "出生",
+          "total": 1,
+          "name": "CS",
+          "sel": false,
+          "detail" : {} //由触发得到详情,发出异步请求
+        }
+      }
+    }
+  }
+}
