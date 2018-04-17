@@ -17,10 +17,10 @@ nodejs v6.9.0版本
 `npm start`
 
 #### 开发+说明文档
-`npm run dev`
+`npm run server`
 
 #### 访问地址
-http://localhost:8000
+http://localhost:8002
 
 #### 构建提速
 先执行`npm run build:dll`,之后执行`npm start`可以大大减少构建数量,
@@ -31,69 +31,11 @@ http://localhost:8000
 #### 强力工具库lodash建议使用
 http://lodashjs.com/docs (建议最小导入使用 eg: `import _isEmpty from 'lodash/isEmpty'`)
 
-#### alias注册
-./alias.js 文件里注册
-
-#### 附加的图标和按钮库
-```
-import SysIcon from 'SysIcon'
-import Buttons from 'Buttons'
-```
-
-#### 目录说明
-```
-├─dlls                          #dlls编译后的问题
-├─doc                           #帮助文件入口
-│
-├─src
-│ ├─apps                        #各个功能模块放在这里
-│ │  ├─aftersale                #售后模块
-│ │  │  └─contractmanage        #合同管理
-│ │  │      └─component
-│ │  ├─login
-│ │  ├─sales
-│ │  |   ├─housequery
-│ │  |   └─reservation
-│ |  ├─action.js                #主界面可发起动作
-│ |  ├─index.js                 #主界面视图，已连接redux
-│ |  └─reducer.js               #主界面动作处理器
-│ ├─common                      #公共资源文件夹，包含功能样式图片等
-│ │  └─img
-│ │      ├─funButton
-│ │      └─icons
-│ ├─components                  #可复用视图组件，与具体业务无强关联
-│ │  ├─Common
-│ │  ├─Footer
-│ │  ├─LeftPanel                #左侧菜单
-│ │  ├─Loding
-│ │  ├─NavPath                  #面包屑
-│ │  ├─PanelBox
-│ │  ├─RightPanel               #右侧主视图区
-│ │  └─TabPanel
-│ ├─constants                   #公用静态数据
-│ |  └─LeftMenu                 #主菜单结构定义(新增模块时在这里增加菜单)
-│ ├─entries                     #系统主入口文件
-│ ├─reducers                    #系统动作处理器注册模块(增加新模块需配合在这里增加动作处理器)
-│ ├─routes                      #系统路由动态生成模块(根据apps下的模块结构)
-│ ├─store                       #系统全局状态存储器(一般不会修改)
-│ │  └─middlewares
-│ └─util                        #工具类包(xFetch后台请求工具等)
-│
-├─static                        #静态资源存放路径                      
-```
 
 开发注意要点
 =========================
 
-*模块开发自带的样式放在本模块下面,图片放到公共目录下(src/common/img)*
-
-*一般不要覆盖ant的样式，有需要在entries/index.less里覆盖。页面布局采用ant的row,col布局不要另外单独写样式布局*
-
-*模块主入口文件使用.js后缀，模块部件放到子文件夹`./components下`,并以.jsx为后缀*
-
 ##### 后台交互说明
-开发环境调用后台路径配置：
-`proxy.config.js`文件下可以自由定义接口调用到的后台地址，业务模块不要出现应用路径(BackGround)；
 
 各个模块目录下：
 - api.js      定义与后台交互的接口方法 
@@ -123,42 +65,8 @@ function mapDispatchToProps(dispatch){
 ```
 React 开发规范
 ========================
-###### React内置类型
-```
-React.PropTypes类型列表 (任何类型在最后加上isRequired则此在使用此组件时必须赋值)
-React.PropTypes.array,//数组类型
-React.PropTypes.bool,//布尔值类型
-React.PropTypes.func,//函数类型
-React.PropTypes.number,//数值类型
-React.PropTypes.object,//JS对象类型
-React.PropTypes.string, //字符串类型
-React.PropTypes.node, // 所有可以被渲染的对象    
-React.PropTypes.element,  // React 元素
-React.PropTypes.oneOf(['News', 'Photos']), //只接受其中一个值的枚举类型
-React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number     ]),
-React.PropTypes.arrayOf(React.PropTypes.number), // 指定类型组成的数组
-// 指定类型的属性构成的对象
- React.PropTypes.objectOf(React.PropTypes.number),
-// 特定形状参数的对象
- React.PropTypes.shape({
-  color: React.PropTypes.string,
-  fontSize: React.PropTypes.number
-}),
-```
-###### React生命周期
-```
-  挂载		
-		componentWillMount   挂载前		
-		componentDidMount	挂载后
-	更新		
-		componentWillUpdate		更新前		
-		componentDidUpdate		更新后
-		componentWillReceiveProps	当接收到props时		参数:nextProps
-	    shouldComponentUpdate		是否执行更新
-	卸载		
-		componentWillUnmount
-```
-###### React注意要点
+
+### React注意要点
 - 所有的组件render返回的标签，最外层只能有一个根标签
 - `defaultValue`只有在组件第一次渲染才起作用，除非组件被销毁后重建，所以直接通过state或者props里的value来控制组件的value([受控组件与非受控组件](http://www.cnblogs.com/qingguo/p/5857923.html))
 - 通过遍历器(for in, forEach, []数组)生成的控件一定要给每一条记录对应的控件key作唯一区分
@@ -182,22 +90,6 @@ render: (value, record, index) => {
   return <Input size="default" value={value} />
 }
 ```
-
-目前的扩展组件
-================================
-- `SearchInput` 带查询按钮的输入框，支持自动完成
-- `TitleWithTools` 左边有个蓝色竖条的排版分段组件
-- `ShowHide` 可展开收起的面板，一般用于查询表单容器
-- `SearchPanel` 查询表单，带普通/高级查询tabs
-- `FullPagePanel` 全屏弹出显示，用于需要三级路径的模块
-- `DataHeader` 复杂单据的分段排版
-- `StateMark` 状态统一标记
-- `MianBao` 面包屑控件
-- `AppAction` 全局action，用于全局状态变更
-- `MsgBox` 统一风格的消息弹出提示，用法参考ant的`Modal`
-- `util` 工具类(缓存操作，DataUtil.getProjDataById根据项目id获取项目节点对象)
-- `SysIcon` 扩展图标库
-- `Buttons` 扩展按钮库
 
 路由相关说明：
 ================================
@@ -282,23 +174,6 @@ this.props.location.query.xxx
 ```
 
 Redux相关说明
-==========================
-##### 表单在生产环境输入框修改无效问题
-表单组件不能是纯函数写法，要用如下写法：
-```
-xxx extends React.Component
-```
-或者
-```
-import { createForm } from 'enhanceUtil'
-...
-createForm((props)=>{...});
-```
 
 ##### 修改状态后不生效的问题
 使用深度clone保证reucer返回回去的对象为新对象 `_.deepClone`(也可以使用Immutable)
-
-##### Redux连接后的组件refs生效的方法(第四个参数)
-`connect(mapStateToProps, mapDispatchToProps, null, { withRef: true })(Content);`
-
-## test flow
