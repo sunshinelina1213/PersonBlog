@@ -16,10 +16,10 @@ const initState = {
 
 export default createReducer(initState,createReduceOf({
     [`${GET_TB_INDEX}_SUCCESS`]: (state,ret = {}, params ) => {
-        console.log('ret',ret)
+        console.log('ret-------------------',ret)
         return I.set(state,{
             isLoading : false,
-
+            headerData: ret.headerData
         });
     }
 

@@ -2,7 +2,7 @@
 const fetch = require('../../common/fetch');
 
 let co = require('co');
-let helpJs = require('./../../common/helper');
+let helpJs = require('../../common/helper');
 let _ = require('lodash');
 
 // let configFile = require('./config/config.js');

@@ -8,8 +8,7 @@ import styles from './index.less';
 
 import { Row, Col } from 'antd';
 import * as _ from 'lodash';
-
-
+import Header from './component/header.js'; 
 
 class Tubiaoindex extends React.Component{
     constructor(){
@@ -24,18 +23,16 @@ class Tubiaoindex extends React.Component{
     render(){
         return(
            <div className ={styles['main-body']}>
-               <Row className={styles['tubiao-header']}>
-                   <Col span={12}>col-12</Col>
-                   <Col span={12}>col-12</Col>
-               </Row>
+               <Header {...this.props}/>
            </div>
         )
     }
 }
 
 function mapStateToProps(state,ownProps){
+    let tubiao = state.get('tubiao.index');
     return {
-       
+       ...tubiao
     }
 }
 function mapDispatchToProps(dispatch){

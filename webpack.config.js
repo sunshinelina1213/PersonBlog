@@ -60,7 +60,7 @@ module.exports = function (webpackConfig) {
     //动态生成入口index.html
     webpackConfig.plugins.push(
         new HtmlWebpackPlugin({
-            title: '警务大数据应用平台',
+            title: '个人博客平台',
             template: 'src/entries/index.ejs',
             inject: 'body',
             hasDlls: !!hasDlls
